@@ -1,6 +1,6 @@
-# Minimal-Light — XFCE Theme
+# Minimal-Light — Xfce Theme
 
-A clean, minimal XFCE desktop configuration based on the **Minimal-Light** GTK theme, **Zafiro-Icons-Light** icon pack (with some mod), and a some minimalist wallpapers.
+A clean, minimal Xfce desktop configuration based on the **Minimal-Light** GTK theme, **Zafiro-Icons-Light** icon pack (with some mod), and a some minimalist wallpapers.
 
 ![Minimal-Light Desktop Preview](images/screenshot.png)
 
@@ -17,7 +17,7 @@ minimal-light/
 │       ├── panel/
 │       │   └── launcher-*/   # Panel launcher .desktop files
 │       └── xfconf/
-│           └── xfce-perchannel-xml/   # XFCE channel configuration (XML)
+│           └── xfce-perchannel-xml/   # Xfce channel configuration (XML)
 ├── themes/
 │   └── Minimal-Light/                 # GTK theme
 └── install.sh                         # Installation script
@@ -29,20 +29,20 @@ minimal-light/
 
 ## Requirements
 
-- XFCE 4.x desktop environment
+- Xfce 4.x desktop environment
 - Bash shell
 - `tar` with xz support
 - `curl` (only for remote installation with `--remote`)
 
 ---
 
-## XFCE Components & Plugins
+## Xfce Components & Plugins
 
-### Core XFCE packages
+### Core Xfce packages
 
 | Package | Description |
 |---------|-------------|
-| `xfce4` | Base XFCE desktop environment |
+| `xfce4` | Base Xfce desktop environment |
 | `xfce4-panel` | Panel (required for all plugins below) |
 | `xfwm4` | Window manager |
 | `xfdesktop` | Desktop manager (wallpaper, icons) |
@@ -90,7 +90,7 @@ bash install.sh
 ### For the current user (remote with curl)
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/passy1977/XFCE4-theme-Minimal-Light/main/install.sh | bash -s -- --remote
+curl -fsSL https://raw.githubusercontent.com/passy1977/Xfce4-theme-Minimal-Light/main/install.sh | bash -s -- --remote
 ```
 
 ### For a specific user (requires root, local repository)
@@ -102,11 +102,11 @@ sudo bash install.sh --user <username>
 ### For a specific user (requires root, remote with curl)
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/passy1977/XFCE4-theme-Minimal-Light/main/install.sh | sudo bash -s -- --remote --user <username>
+curl -fsSL https://raw.githubusercontent.com/passy1977/Xfce4-theme-Minimal-Light/main/install.sh | sudo bash -s -- --remote --user <username>
 ```
 
 > **Note:** The target user must have logged in at least once before running this command,
-> so that their home directory and XFCE profile are properly initialized.
+> so that their home directory and Xfce profile are properly initialized.
 
 ### Options
 
@@ -125,11 +125,11 @@ curl -fsSL https://raw.githubusercontent.com/passy1977/XFCE4-theme-Minimal-Light
 | GTK theme `Minimal-Light` | `~/.local/share/themes/Minimal-Light` |
 | Icon theme `Zafiro-Icons-Light` | Bundled in `icons/` → `~/.local/share/icons/Zafiro-Icons-Light` |
 | Wallpapers | `/usr/local/share/backgrounds/` (root) or `~/.local/share/backgrounds/` (user) |
-| XFCE config (panel, desktop, keyboard, etc.) | `~/.config/xfce4/xfconf/xfce-perchannel-xml/` |
+| Xfce config (panel, desktop, keyboard, etc.) | `~/.config/xfce4/xfconf/xfce-perchannel-xml/` |
 | Panel launcher shortcuts | `~/.config/xfce4/panel/launcher-*/` |
 | Thunar native config (custom actions, shortcuts, bulk renamer) | `~/.config/Thunar/` |
 
-> **Backup**: existing XFCE and Thunar config files are automatically backed up with a `.bak` extension before being replaced.
+> **Backup**: existing Xfce and Thunar config files are automatically backed up with a `.bak` extension before being replaced.
 
 > **Wallpaper paths**: the script automatically rewrites the wallpaper paths in `xfce4-desktop.xml` to match the actual install destination, whether backgrounds are installed system-wide or in the user's home.
 
@@ -137,7 +137,7 @@ curl -fsSL https://raw.githubusercontent.com/passy1977/XFCE4-theme-Minimal-Light
 
 ## Applying the theme
 
-After installation, log out and log back into your XFCE session to apply all settings.
+After installation, log out and log back into your Xfce session to apply all settings.
 
 If some settings are not applied automatically:
 - **Settings → Appearance** → select `Minimal-Light`
@@ -158,9 +158,9 @@ If some settings are not applied automatically:
 
 ---
 
-## XFCE configuration files
+## Xfce configuration files
 
-The following XFCE settings are included:
+The following Xfce settings are included:
 
 | File | Description |
 |------|-------------|
@@ -169,7 +169,7 @@ The following XFCE settings are included:
 | `xfce4-panel.xml` | Panel layout and plugins |
 | `xfwm4.xml` | Window manager settings |
 | `xfce4-terminal.xml` | Terminal emulator settings |
-| `thunar.xml` | Thunar preferences stored in XFCE channel settings |
+| `thunar.xml` | Thunar preferences stored in Xfce channel settings |
 | `thunar-volman.xml` | Thunar removable media settings |
 | `xfce4-keyboard-shortcuts.xml` | Keyboard shortcuts |
 | `xfce4-power-manager.xml` | Power management |
