@@ -19,8 +19,6 @@
         <value type="int" value="23" />
         <value type="int" value="7" />
         <value type="int" value="25" />
-        <value type="int" value="30" />
-        <value type="int" value="12" />
         <value type="int" value="2" />
         <value type="int" value="5" />
         <value type="int" value="14" />
@@ -114,7 +112,7 @@
     </property>
     <property name="plugin-26" type="string" value="whiskermenu">
       <property name="button-title" type="string" value="" />
-      <property name="button-icon" type="string" value="/home/antoniosalsi/.face" />
+      <property name="button-icon" type="string" value="xfce4-logo" />
       <property name="show-button-title" type="bool" value="false" />
       <property name="view-mode" type="int" value="0" />
       <property name="favorites-in-recent" type="bool" value="false" />
@@ -233,16 +231,6 @@
         <value type="string" value="17015226062.desktop" />
       </property>
     </property>
-    <property name="plugin-12" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="17557695041.desktop" />
-        <value type="string" value="17542520911.desktop" />
-        <value type="string" value="17547446762.desktop" />
-        <value type="string" value="17565479981.desktop" />
-      </property>
-      <property name="show-label" type="bool" value="false" />
-      <property name="move-first" type="bool" value="true" />
-    </property>
     <property name="plugin-1" type="string" value="separator">
       <property name="style" type="uint" value="0" />
     </property>
@@ -277,15 +265,6 @@
       <property name="enable-keyboard-shortcuts" type="bool" value="true" />
       <property name="known-players" type="string" value="Chrome;firefox;LibreWolf;librewolf;vlc" />
       <property name="volume-step" type="uint" value="3" />
-    </property>
-    <property name="plugin-30" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="17710906211.desktop" />
-        <value type="string" value="17760294251.desktop" />
-        <value type="string" value="17611646755.desktop" />
-        <value type="string" value="17704748291.desktop" />
-      </property>
-      <property name="move-first" type="bool" value="true" />
     </property>
   </property>
 </channel>

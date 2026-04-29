@@ -116,16 +116,9 @@ sudo bash install.sh --user <username>
 
 ## Applying the theme
 
-After installation, either:
+After installation, log out and log back into your XFCE session to apply all settings.
 
-1. **Log out and log back in** to your XFCE session, or
-2. Run the following to reload without logging out:
-
-```bash
-xfce4-panel --restart && xfsettingsd --replace &
-```
-
-If settings are not applied automatically:
+If some settings are not applied automatically:
 - **Settings → Appearance** → select `Minimal-Light`
 - **Settings → Icons** → select `Zafiro-Icons-Light`
 
@@ -180,6 +173,7 @@ The following XFCE settings are included:
 | `Ctrl + Alt + Delete` | Session Logout |
 | `Ctrl + Escape` | Desktop right-click menu |
 | `Alt + F1` | Applications Menu |
+| `XF86PowerOff` | Session Logout (`xfce4-session-logout`) |
 | `XF86WWW` / `HomePage` | Open default Web Browser |
 | `XF86Mail` | Open default Mail Reader |
 | `Calculator` | Open Calculator |
