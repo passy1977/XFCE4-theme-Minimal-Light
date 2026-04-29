@@ -147,7 +147,7 @@ If some settings are not applied automatically:
 
 ## Included wallpapers
 
-4 minimalist wallpapers are included in the `backgrounds/` folder:  
+6 minimalist wallpapers are included in the `backgrounds/` folder:  
 
 ![001.jpg](backgrounds/001.jpg)   
 ![002.jpg](backgrounds/002.jpg)   
