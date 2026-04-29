@@ -16,22 +16,22 @@
         <property name="workspace2" type="empty">
           <property name="color-style" type="int" value="0" />
           <property name="image-style" type="int" value="5" />
-          <property name="last-image" type="string" value="/usr/share/backgrounds/xfce/xfce-light.svg" />
+          <property name="last-image" type="string" value="/usr/local/share/backgrounds/003.jpg" />
         </property>
         <property name="workspace3" type="empty">
           <property name="color-style" type="int" value="0" />
           <property name="image-style" type="int" value="5" />
-          <property name="last-image" type="string" value="/usr/share/backgrounds/xfce/xfce-light.svg" />
+          <property name="last-image" type="string" value="/usr/local/share/backgrounds/004.jpg" />
         </property>
         <property name="workspace4" type="empty">
           <property name="color-style" type="int" value="0" />
           <property name="image-style" type="int" value="5" />
-          <property name="last-image" type="string" value="/usr/share/backgrounds/xfce/xfce-light.svg" />
+          <property name="last-image" type="string" value="/usr/local/share/backgrounds/005.jpg" />
         </property>
         <property name="workspace5" type="empty">
           <property name="color-style" type="int" value="0" />
           <property name="image-style" type="int" value="5" />
-          <property name="last-image" type="string" value="/usr/share/backgrounds/xfce/xfce-light.svg" />
+          <property name="last-image" type="string" value="/usr/local/share/backgrounds/006.jpg" />
         </property>
       </property>
       <property name="monitoreDP" type="empty">
@@ -48,22 +48,22 @@
         <property name="workspace2" type="empty">
           <property name="color-style" type="int" value="0" />
           <property name="image-style" type="int" value="5" />
-          <property name="last-image" type="string" value="/usr/share/backgrounds/xfce/xfce-light.svg" />
+          <property name="last-image" type="string" value="/usr/local/share/backgrounds/003.jpg" />
         </property>
         <property name="workspace3" type="empty">
           <property name="color-style" type="int" value="0" />
           <property name="image-style" type="int" value="5" />
-          <property name="last-image" type="string" value="/usr/share/backgrounds/xfce/xfce-light.svg" />
+          <property name="last-image" type="string" value="/usr/local/share/backgrounds/004.jpg" />
         </property>
         <property name="workspace4" type="empty">
           <property name="color-style" type="int" value="0" />
           <property name="image-style" type="int" value="5" />
-          <property name="last-image" type="string" value="/usr/share/backgrounds/xfce/xfce-light.svg" />
+          <property name="last-image" type="string" value="/usr/local/share/backgrounds/005.jpg" />
         </property>
         <property name="workspace5" type="empty">
           <property name="color-style" type="int" value="0" />
           <property name="image-style" type="int" value="5" />
-          <property name="last-image" type="string" value="/usr/share/backgrounds/xfce/xfce-light.svg" />
+          <property name="last-image" type="string" value="/usr/local/share/backgrounds/006.jpg" />
         </property>
       </property>
       <property name="monitorDisplayPort-1" type="empty">
@@ -84,22 +84,22 @@
         <property name="workspace2" type="empty">
           <property name="color-style" type="int" value="0" />
           <property name="image-style" type="int" value="5" />
-          <property name="last-image" type="string" value="/usr/share/backgrounds/xfce/xfce-light.svg" />
+          <property name="last-image" type="string" value="/usr/local/share/backgrounds/003.jpg" />
         </property>
         <property name="workspace3" type="empty">
           <property name="color-style" type="int" value="0" />
           <property name="image-style" type="int" value="5" />
-          <property name="last-image" type="string" value="/usr/share/backgrounds/xfce/xfce-light.svg" />
+          <property name="last-image" type="string" value="/usr/local/share/backgrounds/004.jpg" />
         </property>
         <property name="workspace4" type="empty">
           <property name="color-style" type="int" value="0" />
           <property name="image-style" type="int" value="5" />
-          <property name="last-image" type="string" value="/usr/share/backgrounds/xfce/xfce-light.svg" />
+          <property name="last-image" type="string" value="/usr/local/share/backgrounds/005.jpg" />
         </property>
         <property name="workspace5" type="empty">
           <property name="color-style" type="int" value="0" />
           <property name="image-style" type="int" value="5" />
-          <property name="last-image" type="string" value="/usr/share/backgrounds/xfce/xfce-light.svg" />
+          <property name="last-image" type="string" value="/usr/local/share/backgrounds/006.jpg" />
         </property>
       </property>
       <property name="monitorDisplayPort-2" type="empty">
@@ -116,7 +116,22 @@
         <property name="workspace2" type="empty">
           <property name="color-style" type="int" value="0" />
           <property name="image-style" type="int" value="5" />
-          <property name="last-image" type="string" value="/usr/share/backgrounds/xfce/xfce-light.svg" />
+          <property name="last-image" type="string" value="/usr/local/share/backgrounds/003.jpg" />
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="color-style" type="int" value="0" />
+          <property name="image-style" type="int" value="5" />
+          <property name="last-image" type="string" value="/usr/local/share/backgrounds/004.jpg" />
+        </property>
+        <property name="workspace4" type="empty">
+          <property name="color-style" type="int" value="0" />
+          <property name="image-style" type="int" value="5" />
+          <property name="last-image" type="string" value="/usr/local/share/backgrounds/005.jpg" />
+        </property>
+        <property name="workspace5" type="empty">
+          <property name="color-style" type="int" value="0" />
+          <property name="image-style" type="int" value="5" />
+          <property name="last-image" type="string" value="/usr/local/share/backgrounds/006.jpg" />
         </property>
       </property>
     </property>

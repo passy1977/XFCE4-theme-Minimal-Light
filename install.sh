@@ -13,6 +13,7 @@ SCRIPT_DIR=""
 REMOTE_MODE=0
 REMOTE_ARCHIVE_URL="${MINIMAL_LIGHT_REMOTE_ARCHIVE_URL:-https://github.com/passy1977/XFCE4-theme-Minimal-Light/archive/refs/heads/main.tar.gz}"
 TEMP_DIR=""
+DEFAULT_BACKGROUNDS_DIR="/usr/local/share/backgrounds"
 
 usage() {
     echo "Usage: bash install.sh [--remote] [--user <username>]"
@@ -157,14 +158,14 @@ fi
 # 3. Install wallpapers
 # -------------------------------------------------------
 echo "[3/5] Installing wallpapers..."
-BACKGROUNDS_DEST="/usr/local/share/backgrounds"
+BACKGROUNDS_DEST="$DEFAULT_BACKGROUNDS_DIR"
 
 if [[ "$EUID" -eq 0 ]]; then
     mkdir -p "$BACKGROUNDS_DEST"
     cp "$SCRIPT_DIR/backgrounds/"* "$BACKGROUNDS_DEST/"
     echo "      -> $BACKGROUNDS_DEST"
 else
-    # Fall back to user-local path and patch the desktop config
+    # Fall back to a user-local path when no privileged install is available
     BACKGROUNDS_DEST="$TARGET_HOME/.local/share/backgrounds"
     mkdir -p "$BACKGROUNDS_DEST"
     cp "$SCRIPT_DIR/backgrounds/"* "$BACKGROUNDS_DEST/"
@@ -172,9 +173,9 @@ else
 fi
 
 # -------------------------------------------------------
-# 4. Install XFCE configuration
+# 4. Install XFCE and Thunar configuration
 # -------------------------------------------------------
-echo "[4/5] Installing XFCE configuration..."
+echo "[4/5] Installing XFCE and Thunar configuration..."
 XFCONF_DIR="$TARGET_HOME/.config/xfce4/xfconf/xfce-perchannel-xml"
 mkdir -p "$XFCONF_DIR"
 
@@ -185,9 +186,9 @@ for xml_file in "$SCRIPT_DIR/config/xfce4/xfconf/xfce-perchannel-xml/"*.xml; do
         cp "$dest" "${dest}.bak"
         echo "      Backup: ${dest}.bak"
     fi
-    # If backgrounds were installed to user-local path, patch the desktop config
-    if [[ "$filename" == "xfce4-desktop.xml" && "$BACKGROUNDS_DEST" != "/usr/local/share/backgrounds" ]]; then
-        sed "s|/usr/local/share/backgrounds|$BACKGROUNDS_DEST|g" "$xml_file" > "$dest"
+    # Normalize wallpaper paths in the desktop config to the chosen install target.
+    if [[ "$filename" == "xfce4-desktop.xml" ]]; then
+        sed "s|$DEFAULT_BACKGROUNDS_DIR|$BACKGROUNDS_DEST|g" "$xml_file" > "$dest"
     else
         cp "$xml_file" "$dest"
     fi
@@ -206,18 +207,45 @@ if [[ -d "$SCRIPT_DIR/config/xfce4/panel" ]]; then
     done
 fi
 
+THUNAR_CONFIG_SRC="$SCRIPT_DIR/config/Thunar"
+THUNAR_CONFIG_DIR="$TARGET_HOME/.config/Thunar"
+if [[ -d "$THUNAR_CONFIG_SRC" ]]; then
+    mkdir -p "$THUNAR_CONFIG_DIR"
+    shopt -s nullglob
+    thunar_files=("$THUNAR_CONFIG_SRC"/*)
+    for thunar_file in "${thunar_files[@]}"; do
+        [[ -f "$thunar_file" ]] || continue
+        filename=$(basename "$thunar_file")
+        dest="$THUNAR_CONFIG_DIR/$filename"
+        if [[ -f "$dest" ]]; then
+            cp "$dest" "${dest}.bak"
+            echo "      Backup: ${dest}.bak"
+        fi
+        cp "$thunar_file" "$dest"
+        echo "      -> $dest"
+    done
+    shopt -u nullglob
+fi
+
 # -------------------------------------------------------
 # 5. Fix file ownership when installing for another user
 # -------------------------------------------------------
 if [[ "$TARGET_USER" != "$USER" ]] && [[ "$EUID" -eq 0 ]]; then
     echo "[5/5] Fixing file ownership..."
-    chown -R "$TARGET_USER":"$TARGET_USER" \
-        "$THEMES_DIR/Minimal-Light" \
-        "$ICONS_DIR/Zafiro-Icons-Light" \
-        "$XFCONF_DIR" \
-        "$PANEL_DIR"
+    OWNERSHIP_TARGETS=(
+        "$THEMES_DIR/Minimal-Light"
+        "$ICONS_DIR/Zafiro-Icons-Light"
+        "$XFCONF_DIR"
+    )
+    if [[ -d "$PANEL_DIR" ]]; then
+        OWNERSHIP_TARGETS+=("$PANEL_DIR")
+    fi
+    if [[ -d "$THUNAR_CONFIG_DIR" ]]; then
+        OWNERSHIP_TARGETS+=("$THUNAR_CONFIG_DIR")
+    fi
+    chown -R "$TARGET_USER":"$TARGET_USER" "${OWNERSHIP_TARGETS[@]}"
     # Only chown backgrounds if installed to user-local path
-    if [[ "$BACKGROUNDS_DEST" != "/usr/local/share/backgrounds" ]]; then
+    if [[ "$BACKGROUNDS_DEST" != "$DEFAULT_BACKGROUNDS_DIR" ]]; then
         chown -R "$TARGET_USER":"$TARGET_USER" "$BACKGROUNDS_DEST"
     fi
 else

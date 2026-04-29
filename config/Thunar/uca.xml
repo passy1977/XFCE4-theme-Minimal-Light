@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Terminal Here</name>
+	<submenu></submenu>
+	<unique-id>1701414769391181-1</unique-id>
+	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
+	<description>Example for a custom action</description>
+	<range></range>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon>thunar</icon>
+	<name>Open thunar as root here</name>
+	<submenu></submenu>
+	<unique-id>1701559783709544-2</unique-id>
+	<command>pkexec thunar %f</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>kr_comparedirs</icon>
+	<name>Compare</name>
+	<submenu></submenu>
+	<unique-id>1724247308775532-1</unique-id>
+	<command>meld %F</command>
+	<description>Compare 2 directory</description>
+	<range>*</range>
+	<patterns>*</patterns>
+</action>
+</actions>

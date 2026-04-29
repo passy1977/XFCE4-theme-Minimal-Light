@@ -31,7 +31,6 @@
       <property name="&lt;Alt&gt;&lt;Super&gt;s" type="empty" />
       <property name="&lt;Super&gt;space" type="string" value="xfce4-popup-whiskermenu" />
       <property name="&lt;Super&gt;Return" type="string" value="exo-open --launch TerminalEmulator" />
-      <property name="Calculator" type="string" value="/usr/bin/galculator" />
     </property>
     <property name="custom" type="empty">
       <property name="&lt;Super&gt;Return" type="string" value="exo-open --launch TerminalEmulator" />

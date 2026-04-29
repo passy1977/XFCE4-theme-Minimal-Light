@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^git -C /home/antoniosalsi/projects/XFCE4-theme-Minimal-Light remote -v$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}

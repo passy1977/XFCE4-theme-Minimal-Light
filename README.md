@@ -10,8 +10,9 @@ A clean, minimal XFCE desktop configuration based on the **Minimal-Light** GTK t
 
 ```
 minimal-light/
-├── backgrounds/          # 30 minimalist wallpapers
+├── backgrounds/          # 6 minimalist wallpapers
 ├── config/
+│   ├── Thunar/           # Native Thunar configuration
 │   └── xfce4/
 │       ├── panel/
 │       │   └── launcher-*/   # Panel launcher .desktop files
@@ -126,10 +127,11 @@ curl -fsSL https://raw.githubusercontent.com/passy1977/XFCE4-theme-Minimal-Light
 | Wallpapers | `/usr/local/share/backgrounds/` (root) or `~/.local/share/backgrounds/` (user) |
 | XFCE config (panel, desktop, keyboard, etc.) | `~/.config/xfce4/xfconf/xfce-perchannel-xml/` |
 | Panel launcher shortcuts | `~/.config/xfce4/panel/launcher-*/` |
+| Thunar native config (custom actions, shortcuts, bulk renamer) | `~/.config/Thunar/` |
 
-> **Backup**: existing XFCE config files are automatically backed up with a `.bak` extension before being replaced.
+> **Backup**: existing XFCE and Thunar config files are automatically backed up with a `.bak` extension before being replaced.
 
-> **Wallpaper paths**: if installed without root, the script automatically patches `xfce4-desktop.xml` to point to the user-local backgrounds directory.
+> **Wallpaper paths**: the script automatically rewrites the wallpaper paths in `xfce4-desktop.xml` to match the actual install destination, whether backgrounds are installed system-wide or in the user's home.
 
 ---
 
@@ -145,11 +147,14 @@ If some settings are not applied automatically:
 
 ## Included wallpapers
 
-2 minimalist wallpapers are included in the `backgrounds/` folder:
+4 minimalist wallpapers are included in the `backgrounds/` folder:  
 
-```
-001.jpg  002.jpg
-```
+![001.jpg](backgrounds/001.jpg)   
+![002.jpg](backgrounds/002.jpg)   
+![003.jpg](backgrounds/003.jpg)   
+![004.jpg](backgrounds/004.jpg)   
+![004.jpg](backgrounds/005.jpg)   
+![004.png](backgrounds/006.png)   
 
 ---
 
@@ -164,12 +169,24 @@ The following XFCE settings are included:
 | `xfce4-panel.xml` | Panel layout and plugins |
 | `xfwm4.xml` | Window manager settings |
 | `xfce4-terminal.xml` | Terminal emulator settings |
+| `thunar.xml` | Thunar preferences stored in XFCE channel settings |
+| `thunar-volman.xml` | Thunar removable media settings |
 | `xfce4-keyboard-shortcuts.xml` | Keyboard shortcuts |
 | `xfce4-power-manager.xml` | Power management |
 | `xfce4-screensaver.xml` | Screensaver settings |
 | `xfce4-notifyd.xml` | Notification daemon settings |
 | `keyboards.xml` | Input device configuration |
 | `pointers.xml` | Mouse/touchpad settings |
+
+## Thunar configuration files
+
+The following native Thunar files are also included and installed to `~/.config/Thunar/`:
+
+| File | Description |
+|------|-------------|
+| `accels.scm` | Custom Thunar keyboard accelerators |
+| `renamerrc` | Bulk renamer preferences |
+| `uca.xml` | User custom actions |
 
 ---
 
@@ -261,3 +278,4 @@ Shortcuts for moving a window left, right, or up within the current workspace ar
 
 - **Zafiro Icons** by [zayronxio](https://github.com/zayronxio/Zafiro-icons/) — icon theme used in this setup, licensed under GPL-3.0.
   Bundled as `icons/Zafiro-Icons-Light.tar.xz` (from [xfce-look.org](https://www.xfce-look.org/s/xfce/p/1209330/)).
+- Background images were downloaded from various sources on the internet.
