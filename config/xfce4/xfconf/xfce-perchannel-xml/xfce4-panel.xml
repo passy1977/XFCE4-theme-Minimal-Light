@@ -1,0 +1,291 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<channel name="xfce4-panel" version="1.0">
+  <property name="configver" type="int" value="2" />
+  <property name="panels" type="array">
+    <value type="int" value="1" />
+    <property name="dark-mode" type="bool" value="false" />
+    <property name="panel-1" type="empty">
+      <property name="position" type="string" value="p=10;x=1137;y=1478" />
+      <property name="length" type="double" value="95.74468085106389" />
+      <property name="position-locked" type="bool" value="true" />
+      <property name="icon-size" type="uint" value="40" />
+      <property name="size" type="uint" value="60" />
+      <property name="plugin-ids" type="array">
+        <value type="int" value="16" />
+        <value type="int" value="9" />
+        <value type="int" value="26" />
+        <value type="int" value="3" />
+        <value type="int" value="17" />
+        <value type="int" value="23" />
+        <value type="int" value="7" />
+        <value type="int" value="25" />
+        <value type="int" value="30" />
+        <value type="int" value="12" />
+        <value type="int" value="2" />
+        <value type="int" value="5" />
+        <value type="int" value="14" />
+        <value type="int" value="4" />
+        <value type="int" value="6" />
+        <value type="int" value="8" />
+        <value type="int" value="10" />
+        <value type="int" value="13" />
+        <value type="int" value="15" />
+        <value type="int" value="1" />
+        <value type="int" value="11" />
+      </property>
+      <property name="background-style" type="uint" value="0" />
+      <property name="background-rgba" type="array">
+        <value type="double" value="0.52549019607843139" />
+        <value type="double" value="0.36862745098039218" />
+        <value type="double" value="0.23529411764705882" />
+        <value type="double" value="1" />
+      </property>
+      <property name="span-monitors" type="bool" value="false" />
+      <property name="mode" type="uint" value="0" />
+      <property name="enter-opacity" type="uint" value="90" />
+      <property name="leave-opacity" type="uint" value="90" />
+      <property name="enable-struts" type="bool" value="true" />
+      <property name="nrows" type="uint" value="1" />
+      <property name="length-adjust" type="bool" value="false" />
+      <property name="autohide-behavior" type="uint" value="1" />
+      <property name="output-name" type="string" value="Primary" />
+    </property>
+  </property>
+  <property name="plugins" type="empty">
+    <property name="plugin-3" type="string" value="separator">
+      <property name="expand" type="bool" value="false" />
+      <property name="style" type="uint" value="0" />
+    </property>
+    <property name="plugin-4" type="string" value="pager">
+      <property name="rows" type="uint" value="2" />
+      <property name="wrap-workspaces" type="bool" value="true" />
+      <property name="miniature-view" type="bool" value="true" />
+      <property name="workspace-scrolling" type="bool" value="true" />
+    </property>
+    <property name="plugin-5" type="string" value="separator">
+      <property name="style" type="uint" value="0" />
+      <property name="expand" type="bool" value="true" />
+    </property>
+    <property name="plugin-6" type="string" value="systray">
+      <property name="square-icons" type="bool" value="true" />
+      <property name="known-legacy-items" type="array">
+        <value type="string" value="xfce4-power-manager" />
+        <value type="string" value="networkmanager applet" />
+      </property>
+      <property name="known-items" type="array">
+        <value type="string" value="Podman Desktop_status_icon_1" />
+        <value type="string" value="vlc" />
+        <value type="string" value="steam" />
+        <value type="string" value="ZapZap" />
+        <value type="string" value="app.py" />
+        <value type="string" value="RSS Guard" />
+        <value type="string" value="remmina-icon" />
+        <value type="string" value="blueman" />
+      </property>
+      <property name="icon-size" type="int" value="0" />
+      <property name="single-row" type="bool" value="false" />
+      <property name="hide-new-items" type="bool" value="false" />
+      <property name="hidden-legacy-items" type="array">
+      </property>
+      <property name="symbolic-icons" type="bool" value="false" />
+      <property name="menu-is-primary" type="bool" value="false" />
+      <property name="hidden-items" type="array">
+      </property>
+    </property>
+    <property name="plugin-10" type="string" value="notification-plugin" />
+    <property name="plugin-13" type="string" value="separator">
+      <property name="style" type="uint" value="0" />
+      <property name="expand" type="bool" value="false" />
+    </property>
+    <property name="plugin-7" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="16712150205.desktop" />
+      </property>
+    </property>
+    <property name="plugin-23" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="17419010911.desktop" />
+      </property>
+    </property>
+    <property name="plugin-25" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="17579670741.desktop" />
+      </property>
+    </property>
+    <property name="plugin-26" type="string" value="whiskermenu">
+      <property name="button-title" type="string" value="" />
+      <property name="button-icon" type="string" value="/home/antoniosalsi/.face" />
+      <property name="show-button-title" type="bool" value="false" />
+      <property name="view-mode" type="int" value="0" />
+      <property name="favorites-in-recent" type="bool" value="false" />
+      <property name="position-search-alternate" type="bool" value="true" />
+      <property name="position-commands-alternate" type="bool" value="true" />
+      <property name="position-categories-alternate" type="bool" value="true" />
+      <property name="menu-width" type="int" value="710" />
+      <property name="menu-height" type="int" value="767" />
+      <property name="command-switchuser" type="string" value="dm-tool switch-to-greeter" />
+      <property name="show-command-restart" type="bool" value="true" />
+      <property name="show-command-shutdown" type="bool" value="true" />
+      <property name="show-command-menueditor" type="bool" value="false" />
+      <property name="show-command-profile" type="bool" value="false" />
+      <property name="favorites" type="array">
+      </property>
+      <property name="recent" type="array">
+        <value type="string" value="io.github.martinrotter.rssguard.desktop" />
+        <value type="string" value="org.remmina.Remmina.desktop" />
+        <value type="string" value="timeshift-gtk.desktop" />
+        <value type="string" value="com.valvesoftware.Steam.desktop" />
+        <value type="string" value="dev.desktop" />
+        <value type="string" value="app.desktop" />
+        <value type="string" value="org.xfce.mousepad.desktop" />
+        <value type="string" value="io.github.flattool.Warehouse.desktop" />
+        <value type="string" value="org.gimp.GIMP.desktop" />
+        <value type="string" value="ar.xjuan.Cambalache.desktop" />
+        <value type="string" value="dev-google-chrome.desktop" />
+        <value type="string" value="com.usebottles.bottles.desktop" />
+        <value type="string" value="org.gnome.Calculator.desktop" />
+        <value type="string" value="org.raspberrypi.rpi-imager.desktop" />
+      </property>
+      <property name="launcher-show-tooltip" type="bool" value="true" />
+      <property name="position-categories-horizontal" type="bool" value="false" />
+      <property name="position-profile-alternate" type="bool" value="false" />
+      <property name="profile-shape" type="int" value="0" />
+      <property name="show-button-icon" type="bool" value="true" />
+      <property name="stay-on-focus-out" type="bool" value="false" />
+      <property name="hover-switch-category" type="bool" value="false" />
+      <property name="launcher-show-description" type="bool" value="true" />
+      <property name="category-show-name" type="bool" value="true" />
+      <property name="launcher-show-name" type="bool" value="true" />
+      <property name="button-single-row" type="bool" value="false" />
+      <property name="launcher-icon-size" type="int" value="3" />
+      <property name="category-icon-size" type="int" value="2" />
+      <property name="menu-opacity" type="int" value="90" />
+      <property name="default-category" type="int" value="1" />
+      <property name="sort-categories" type="bool" value="true" />
+      <property name="show-command-settings" type="bool" value="true" />
+      <property name="show-command-logout" type="bool" value="false" />
+      <property name="show-command-logoutuser" type="bool" value="false" />
+      <property name="recent-items-max" type="int" value="15" />
+      <property name="show-command-suspend" type="bool" value="false" />
+      <property name="show-command-hibernate" type="bool" value="false" />
+      <property name="search-actions" type="int" value="7">
+        <property name="action-0" type="empty">
+          <property name="name" type="string" value="Man Pages" />
+          <property name="pattern" type="string" value="#" />
+          <property name="command" type="string" value="exo-open --launch TerminalEmulator man %s" />
+          <property name="regex" type="bool" value="false" />
+        </property>
+        <property name="action-1" type="empty">
+          <property name="name" type="string" value="Search the Web" />
+          <property name="pattern" type="string" value="?" />
+          <property name="command" type="string" value="exo-open --launch WebBrowser https://duckduckgo.com/?q=%u" />
+          <property name="regex" type="bool" value="false" />
+        </property>
+        <property name="action-2" type="empty">
+          <property name="name" type="string" value="Search for Files" />
+          <property name="pattern" type="string" value="-" />
+          <property name="command" type="string" value="catfish --path=~ --start %s" />
+          <property name="regex" type="bool" value="false" />
+        </property>
+        <property name="action-3" type="empty">
+          <property name="name" type="string" value="Wikipedia" />
+          <property name="pattern" type="string" value="!w" />
+          <property name="command" type="string" value="exo-open --launch WebBrowser https://it.wikipedia.org/wiki/%u" />
+          <property name="regex" type="bool" value="false" />
+        </property>
+        <property name="action-4" type="empty">
+          <property name="name" type="string" value="Run in Terminal" />
+          <property name="pattern" type="string" value="!" />
+          <property name="command" type="string" value="exo-open --launch TerminalEmulator %s" />
+          <property name="regex" type="bool" value="false" />
+        </property>
+        <property name="action-5" type="empty">
+          <property name="name" type="string" value="Open URI" />
+          <property name="pattern" type="string" value="^(file|http|https):\/\/(.*)$" />
+          <property name="command" type="string" value="exo-open \0" />
+          <property name="regex" type="bool" value="true" />
+        </property>
+        <property name="action-6" type="empty">
+          <property name="name" type="string" value="Arch Linux WiKi" />
+          <property name="pattern" type="string" value="wiki" />
+          <property name="command" type="string" value="exo-open --launch WebBrowser https://wiki.archlinux.org" />
+          <property name="regex" type="bool" value="false" />
+        </property>
+      </property>
+    </property>
+    <property name="plugin-16" type="string" value="separator">
+      <property name="style" type="uint" value="0" />
+      <property name="expand" type="bool" value="false" />
+    </property>
+    <property name="plugin-15" type="string" value="clock">
+      <property name="digital-date-font" type="string" value="Sans 10" />
+      <property name="digital-time-font" type="string" value="Sans 10" />
+      <property name="mode" type="uint" value="2" />
+      <property name="timezone" type="string" value="Europe/Rome" />
+      <property name="tooltip-format" type="string" value="%x" />
+      <property name="show-inactive" type="bool" value="false" />
+      <property name="show-meridiem" type="bool" value="false" />
+      <property name="flash-separators" type="bool" value="false" />
+      <property name="show-seconds" type="bool" value="false" />
+    </property>
+    <property name="plugin-17" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="17015226062.desktop" />
+      </property>
+    </property>
+    <property name="plugin-12" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="17557695041.desktop" />
+        <value type="string" value="17542520911.desktop" />
+        <value type="string" value="17547446762.desktop" />
+        <value type="string" value="17565479981.desktop" />
+      </property>
+      <property name="show-label" type="bool" value="false" />
+      <property name="move-first" type="bool" value="true" />
+    </property>
+    <property name="plugin-1" type="string" value="separator">
+      <property name="style" type="uint" value="0" />
+    </property>
+    <property name="clipman" type="empty">
+      <property name="settings" type="empty">
+        <property name="persistent-primary-clipboard" type="bool" value="false" />
+        <property name="show-qr-code" type="bool" value="false" />
+      </property>
+    </property>
+    <property name="plugin-9" type="string" value="separator">
+      <property name="style" type="uint" value="0" />
+    </property>
+    <property name="plugin-11" type="string" value="separator">
+      <property name="style" type="uint" value="0" />
+    </property>
+    <property name="plugin-14" type="string" value="separator">
+      <property name="style" type="uint" value="2" />
+    </property>
+    <property name="plugin-2" type="string" value="tasklist">
+      <property name="flat-buttons" type="bool" value="false" />
+      <property name="show-labels" type="bool" value="true" />
+      <property name="show-handle" type="bool" value="true" />
+      <property name="show-tooltips" type="bool" value="true" />
+      <property name="middle-click" type="uint" value="0" />
+      <property name="grouping" type="bool" value="true" />
+      <property name="switch-workspace-on-unminimize" type="bool" value="true" />
+      <property name="show-wireframes" type="bool" value="false" />
+      <property name="show-only-minimized" type="bool" value="false" />
+      <property name="sort-order" type="uint" value="4" />
+    </property>
+    <property name="plugin-8" type="string" value="pulseaudio">
+      <property name="enable-keyboard-shortcuts" type="bool" value="true" />
+      <property name="known-players" type="string" value="Chrome;firefox;LibreWolf;librewolf;vlc" />
+      <property name="volume-step" type="uint" value="3" />
+    </property>
+    <property name="plugin-30" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="17710906211.desktop" />
+        <value type="string" value="17760294251.desktop" />
+        <value type="string" value="17611646755.desktop" />
+        <value type="string" value="17704748291.desktop" />
+      </property>
+      <property name="move-first" type="bool" value="true" />
+    </property>
+  </property>
+</channel>

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Web Browser
+Comment=Open the default web browser
+Exec=exo-open --launch WebBrowser %u
+Icon=org.xfce.webbrowser
+StartupNotify=true
+Categories=Network;WebBrowser;
+MimeType=x-scheme-handler/http;x-scheme-handler/https;

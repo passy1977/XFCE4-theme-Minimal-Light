@@ -1,0 +1,21 @@
+[Desktop Entry]
+GenericName=Advanced Text Editor
+GenericName[en_GB]=Advanced Text Editor
+Name=Kate
+Name[en_GB]=Kate
+Comment=KDE Advanced Text Editor
+Comment[en_GB]=KDE Advanced Text Editor
+MimeType=text/plain;inode/directory;
+Exec=/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=kate --file-forwarding org.kde.kate -b @@u %U @@
+StartupNotify=true
+X-KDE-HasTempFileOption=true
+Icon=org.kde.kate
+X-DocPath=kate/index.html
+Type=Application
+InitialPreference=9
+Categories=Qt;KDE;Utility;TextEditor;Development;
+Keywords=text;txt;editor;programming;programmer;development;developer;code;
+Keywords[en_GB]=text;txt;editor;programming;programmer;development;developer;code;
+StartupWMClass=kate
+X-Flatpak=org.kde.kate
+X-XFCE-Source=file:///var/lib/flatpak/app/org.kde.kate/x86_64/stable/a2ee4943ab0d2430fd49c8db8b53c657ad0eba4e3428576cd95d2fc117352501/export/share/applications/org.kde.kate.desktop

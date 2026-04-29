@@ -1,0 +1,155 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<channel name="displays" version="1.0">
+  <property name="ActiveProfile" type="string" value="Default"/>
+  <property name="Fallback" type="empty">
+    <property name="eDP" type="string" value="Laptop">
+      <property name="Active" type="bool" value="true"/>
+      <property name="EDID" type="string" value="55de0ea79a55c0e0da23bcbd94c98dbd672f5953"/>
+      <property name="Resolution" type="string" value="1920x1080"/>
+      <property name="RefreshRate" type="double" value="59.99851333820741"/>
+      <property name="Rotation" type="int" value="0"/>
+      <property name="Reflection" type="string" value="0"/>
+      <property name="Primary" type="bool" value="true"/>
+      <property name="Scale" type="empty">
+        <property name="X" type="double" value="1"/>
+        <property name="Y" type="double" value="1"/>
+      </property>
+      <property name="Position" type="empty">
+        <property name="X" type="int" value="0"/>
+        <property name="Y" type="int" value="0"/>
+      </property>
+    </property>
+    <property name="DisplayPort-1" type="string" value="Hewlett Packard 24&quot;">
+      <property name="Active" type="bool" value="true"/>
+      <property name="EDID" type="string" value="b24fde9ad8053a40f748a90a68b75049cc31bf00"/>
+      <property name="Resolution" type="string" value="1920x1080"/>
+      <property name="RefreshRate" type="double" value="60"/>
+      <property name="Rotation" type="int" value="0"/>
+      <property name="Reflection" type="string" value="0"/>
+      <property name="Primary" type="bool" value="false"/>
+      <property name="Scale" type="empty">
+        <property name="X" type="double" value="1.2999999523162842"/>
+        <property name="Y" type="double" value="1.2999999523162842"/>
+      </property>
+      <property name="Position" type="empty">
+        <property name="X" type="int" value="1920"/>
+        <property name="Y" type="int" value="0"/>
+      </property>
+    </property>
+    <property name="DisplayPort-2" type="string" value="Dell Inc. 24&quot;">
+      <property name="Active" type="bool" value="true"/>
+      <property name="EDID" type="string" value="ac7f37ed0c09f2814e38a5cb8068bad9dd8e5364"/>
+      <property name="Resolution" type="string" value="1920x1080"/>
+      <property name="RefreshRate" type="double" value="60"/>
+      <property name="Rotation" type="int" value="0"/>
+      <property name="Reflection" type="string" value="0"/>
+      <property name="Primary" type="bool" value="false"/>
+      <property name="Scale" type="empty">
+        <property name="X" type="double" value="1"/>
+        <property name="Y" type="double" value="1"/>
+      </property>
+      <property name="Position" type="empty">
+        <property name="X" type="int" value="167"/>
+        <property name="Y" type="int" value="0"/>
+      </property>
+    </property>
+  </property>
+  <property name="Notify" type="int" value="1"/>
+  <property name="IdentityPopups" type="bool" value="false"/>
+  <property name="AutoEnableProfiles" type="int" value="3"/>
+  <property name="e6427457497fe0f4f93a7334d2203b8e17ee82df" type="string" value="office">
+    <property name="eDP" type="string" value="Laptop">
+      <property name="Active" type="bool" value="true"/>
+      <property name="EDID" type="string" value="55de0ea79a55c0e0da23bcbd94c98dbd672f5953"/>
+      <property name="Resolution" type="string" value="2256x1504"/>
+      <property name="RefreshRate" type="double" value="59.99851333820741"/>
+      <property name="Rotation" type="int" value="0"/>
+      <property name="Reflection" type="string" value="0"/>
+      <property name="Primary" type="bool" value="true"/>
+      <property name="Scale" type="double" value="1"/>
+      <property name="Position" type="empty">
+        <property name="X" type="int" value="0"/>
+        <property name="Y" type="int" value="1440"/>
+      </property>
+    </property>
+    <property name="DisplayPort-1" type="string" value="Dell Inc. 24&quot;">
+      <property name="Active" type="bool" value="true"/>
+      <property name="EDID" type="string" value="ac7f37ed0c09f2814e38a5cb8068bad9dd8e5364"/>
+      <property name="Resolution" type="string" value="1920x1080"/>
+      <property name="RefreshRate" type="double" value="60"/>
+      <property name="Rotation" type="int" value="0"/>
+      <property name="Reflection" type="string" value="0"/>
+      <property name="Primary" type="bool" value="false"/>
+      <property name="Scale" type="double" value="1.3333282470703125"/>
+      <property name="Position" type="empty">
+        <property name="X" type="int" value="0"/>
+        <property name="Y" type="int" value="0"/>
+      </property>
+    </property>
+  </property>
+  <property name="e83249bd3ba79932e16fb1fb5100dafade9954c2" type="empty">
+    <property name="eDP" type="string" value="Laptop">
+      <property name="Active" type="bool" value="true"/>
+      <property name="EDID" type="string" value="55de0ea79a55c0e0da23bcbd94c98dbd672f5953"/>
+      <property name="Resolution" type="string" value="2256x1504"/>
+      <property name="RefreshRate" type="double" value="59.99851333820741"/>
+      <property name="ModeFlags" type="uint64" value="9"/>
+      <property name="Rotation" type="int" value="0"/>
+      <property name="Reflection" type="string" value="0"/>
+      <property name="Primary" type="bool" value="false"/>
+      <property name="Scale" type="double" value="1"/>
+      <property name="Position" type="empty">
+        <property name="X" type="int" value="0"/>
+        <property name="Y" type="int" value="0"/>
+      </property>
+    </property>
+    <property name="DisplayPort-1" type="string" value="Hewlett Packard 24&quot;">
+      <property name="Active" type="bool" value="true"/>
+      <property name="EDID" type="string" value="b24fde9ad8053a40f748a90a68b75049cc31bf00"/>
+      <property name="Resolution" type="string" value="1920x1080"/>
+      <property name="RefreshRate" type="double" value="60"/>
+      <property name="ModeFlags" type="uint64" value="5"/>
+      <property name="Rotation" type="int" value="0"/>
+      <property name="Reflection" type="string" value="0"/>
+      <property name="Primary" type="bool" value="true"/>
+      <property name="Scale" type="double" value="1.3698577880859375"/>
+      <property name="Position" type="empty">
+        <property name="X" type="int" value="2256"/>
+        <property name="Y" type="int" value="0"/>
+      </property>
+    </property>
+  </property>
+  <property name="Default" type="empty">
+    <property name="eDP" type="string" value="Laptop">
+      <property name="Active" type="bool" value="true"/>
+      <property name="EDID" type="string" value="55de0ea79a55c0e0da23bcbd94c98dbd672f5953"/>
+      <property name="Resolution" type="string" value="2256x1504"/>
+      <property name="RefreshRate" type="double" value="59.99851333820741"/>
+      <property name="ModeFlags" type="uint64" value="9"/>
+      <property name="Rotation" type="int" value="0"/>
+      <property name="Reflection" type="string" value="0"/>
+      <property name="Primary" type="bool" value="false"/>
+      <property name="Scale" type="double" value="1"/>
+      <property name="Position" type="empty">
+        <property name="X" type="int" value="0"/>
+        <property name="Y" type="int" value="0"/>
+      </property>
+    </property>
+    <property name="DisplayPort-1" type="string" value="Hewlett Packard 24&quot;">
+      <property name="Active" type="bool" value="true"/>
+      <property name="EDID" type="string" value="b24fde9ad8053a40f748a90a68b75049cc31bf00"/>
+      <property name="Resolution" type="string" value="1920x1080"/>
+      <property name="RefreshRate" type="double" value="60"/>
+      <property name="ModeFlags" type="uint64" value="5"/>
+      <property name="Rotation" type="int" value="0"/>
+      <property name="Reflection" type="string" value="0"/>
+      <property name="Primary" type="bool" value="true"/>
+      <property name="Scale" type="double" value="1.3698577880859375"/>
+      <property name="Position" type="empty">
+        <property name="X" type="int" value="2256"/>
+        <property name="Y" type="int" value="0"/>
+      </property>
+    </property>
+  </property>
+</channel>

@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=Planify
+Comment=Never worry about forgetting things again
+Categories=Utility;Office;ProjectManagement;Calendar;
+Exec=/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=io.github.alainm23.planify io.github.alainm23.planify
+Icon=io.github.alainm23.planify
+Terminal=false
+Type=Application
+StartupNotify=true
+X-GNOME-Gettext-Domain=planify
+X-GNOME-UsesNotifications=true
+Keywords=development;task;tasks;project;todo;event;events;calendar;todoist;
+X-Purism-FormFactor=Workstation;Mobile;
+X-Flatpak=io.github.alainm23.planify
+X-XFCE-Source=file:///var/lib/flatpak/app/io.github.alainm23.planify/x86_64/stable/1df98b3a270b02d3cee42746069febd2ef17b144f7a0b1afa6a960da4298f0cc/export/share/applications/io.github.alainm23.planify.desktop

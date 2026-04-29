@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Minimal-Light
+Comment=A minimal light theme with transparent elements
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Minimal-Light
+MetacityTheme=Minimal-Light
+IconTheme=Zafiro-icons-Light
+CursorTheme=DeepinDark-cursors
+ButtonLayout=menu:minimize,maximize,close

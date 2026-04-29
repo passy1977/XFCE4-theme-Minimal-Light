@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Password
+Exec=/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=password io.gitlab.elescoute.password
+Terminal=false
+Type=Application
+Categories=GTK;Utility;
+StartupNotify=true
+Icon=io.gitlab.elescoute.password
+Keywords=password;generate;generator;security;pwned;salt;secret;
+X-Purism-FormFactor=Mobile;
+X-Flatpak=io.gitlab.elescoute.password
+X-XFCE-Source=file:///var/lib/flatpak/app/io.gitlab.elescoute.password/x86_64/stable/b587796d6492bbaa6115b68ab4055feaeb38b9434f847a450ef8abfbfa8f8db8/export/share/applications/io.gitlab.elescoute.password.desktop

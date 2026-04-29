@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Mail Reader
+Comment=Open the default mail client
+Exec=exo-open --launch MailReader %u
+Icon=org.xfce.mailreader
+StartupNotify=true
+Categories=Network;Email;
+MimeType=x-scheme-handler/mailto;
