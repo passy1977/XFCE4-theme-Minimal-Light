@@ -1,34 +1,99 @@
 #!/bin/bash
 # install.sh - Install Minimal-Light theme and XFCE configuration
-# Usage: bash install.sh [--user <username>] [--help]
+# Usage: bash install.sh [--remote] [--user <username>] [--help]
 #
 # Dependencies: tar (with xz support)
+# Remote install dependencies: curl
 
-set -e
+set -euo pipefail
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-TARGET_USER="${1:-$USER}"
+TARGET_USER="$USER"
 TARGET_HOME=""
+SCRIPT_DIR=""
+REMOTE_MODE=0
+REMOTE_ARCHIVE_URL="${MINIMAL_LIGHT_REMOTE_ARCHIVE_URL:-https://github.com/passy1977/XFCE4-theme-Minimal-Light/archive/refs/heads/main.tar.gz}"
+TEMP_DIR=""
+
+usage() {
+    echo "Usage: bash install.sh [--remote] [--user <username>]"
+    echo ""
+    echo "  --remote            Download the repository archive before installing"
+    echo "  --user <username>   Install for a specific user (default: current user)"
+    echo "  --help              Show this help message"
+}
+
+cleanup() {
+    if [[ -n "$TEMP_DIR" && -d "$TEMP_DIR" ]]; then
+        rm -rf "$TEMP_DIR"
+    fi
+}
+
+bootstrap_remote_assets() {
+    if ! command -v curl &>/dev/null; then
+        echo "Error: curl is required when using --remote."
+        exit 1
+    fi
+
+    TEMP_DIR=$(mktemp -d)
+    echo "==> Downloading project files from remote archive..."
+    curl -fsSL "$REMOTE_ARCHIVE_URL" | tar -xzf - -C "$TEMP_DIR"
+
+    SCRIPT_DIR=$(find "$TEMP_DIR" -mindepth 1 -maxdepth 1 -type d | head -n 1)
+    if [[ -z "$SCRIPT_DIR" ]]; then
+        echo "Error: unable to extract project archive from $REMOTE_ARCHIVE_URL"
+        exit 1
+    fi
+}
+
+ensure_local_assets() {
+    if [[ ! -d "$SCRIPT_DIR/themes/Minimal-Light" ]] || [[ ! -f "$SCRIPT_DIR/icons/Zafiro-Icons-Light.tar.xz" ]]; then
+        echo "Error: repository assets were not found next to install.sh."
+        echo "Run the script from the project root or use --remote."
+        exit 1
+    fi
+}
+
+trap cleanup EXIT
 
 # Parse arguments
 while [[ $# -gt 0 ]]; do
     case "$1" in
+        --remote)
+            REMOTE_MODE=1
+            shift
+            ;;
         --user)
+            if [[ -z "${2:-}" ]]; then
+                echo "Error: --user requires a username."
+                usage
+                exit 1
+            fi
             TARGET_USER="$2"
             shift 2
             ;;
         --help|-h)
-            echo "Usage: bash install.sh [--user <username>]"
-            echo ""
-            echo "  --user <username>   Install for a specific user (default: current user)"
-            echo "  --help              Show this help message"
+            usage
             exit 0
             ;;
-        *)
+        --)
             shift
+            break
+            ;;
+        *)
+            echo "Error: unknown argument '$1'."
+            usage
+            exit 1
             ;;
     esac
 done
+
+if [[ "$REMOTE_MODE" -eq 1 ]]; then
+    bootstrap_remote_assets
+else
+    SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+fi
+
+ensure_local_assets
 
 # Resolve target user's home directory
 if [[ "$TARGET_USER" == "$USER" ]]; then

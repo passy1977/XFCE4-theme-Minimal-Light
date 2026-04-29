@@ -31,6 +31,7 @@ minimal-light/
 - XFCE 4.x desktop environment
 - Bash shell
 - `tar` with xz support
+- `curl` (only for remote installation with `--remote`)
 
 ---
 
@@ -79,16 +80,28 @@ minimal-light/
 
 ## Installation
 
-### For the current user
+### For the current user (local repository)
 
 ```bash
 bash install.sh
 ```
 
-### For a specific user (requires root)
+### For the current user (remote with curl)
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/passy1977/XFCE4-theme-Minimal-Light/main/install.sh | bash -s -- --remote
+```
+
+### For a specific user (requires root, local repository)
 
 ```bash
 sudo bash install.sh --user <username>
+```
+
+### For a specific user (requires root, remote with curl)
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/passy1977/XFCE4-theme-Minimal-Light/main/install.sh | sudo bash -s -- --remote --user <username>
 ```
 
 > **Note:** The target user must have logged in at least once before running this command,
@@ -98,6 +111,7 @@ sudo bash install.sh --user <username>
 
 | Flag | Description |
 |------|-------------|
+| `--remote` | Download the repository archive before installing; useful with `curl \\| bash` |
 | `--user <username>` | Install for a specific user (default: current user) |
 | `--help` | Show usage information |
 
