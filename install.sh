@@ -2,24 +2,12 @@
 # install.sh - Install Minimal-Light theme and XFCE configuration
 # Usage: bash install.sh [--user <username>] [--help]
 #
-# Dependencies: curl or wget, tar (with xz support)
-
-ZAFIRO_URL="https://github.com/zayronxio/Zafiro-icons/releases/download/1.3/Zafiro-Icons-Light.tar.xz"
+# Dependencies: tar (with xz support)
 
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TARGET_USER="${1:-$USER}"
-
-# Detect download tool
-if command -v curl &>/dev/null; then
-    DOWNLOAD_CMD="curl -fL --progress-bar -o"
-elif command -v wget &>/dev/null; then
-    DOWNLOAD_CMD="wget -q --show-progress -O"
-else
-    echo "Error: neither curl nor wget is available. Please install one of them."
-    exit 1
-fi
 TARGET_HOME=""
 
 # Parse arguments
@@ -75,17 +63,18 @@ cp -r "$SCRIPT_DIR/themes/Minimal-Light" "$THEMES_DIR/"
 echo "      -> $THEMES_DIR/Minimal-Light"
 
 # -------------------------------------------------------
-# 2. Download and install icon theme (Zafiro-Icons-Light)
+# 2. Install icon theme (Zafiro-Icons-Light)
 # -------------------------------------------------------
-echo "[2/5] Downloading Zafiro-Icons-Light from GitHub..."
+echo "[2/5] Installing Zafiro-Icons-Light..."
 ICONS_DIR="$TARGET_HOME/.local/share/icons"
 mkdir -p "$ICONS_DIR"
 
-TMP_ARCHIVE=$(mktemp /tmp/zafiro-icons-XXXXXX.tar.xz)
-$DOWNLOAD_CMD "$TMP_ARCHIVE" "$ZAFIRO_URL"
-echo "      Extracting..."
-tar -xJf "$TMP_ARCHIVE" -C "$ICONS_DIR/"
-rm -f "$TMP_ARCHIVE"
+ICONS_ARCHIVE="$SCRIPT_DIR/icons/Zafiro-Icons-Light.tar.xz"
+if [[ ! -f "$ICONS_ARCHIVE" ]]; then
+    echo "Error: icons archive not found at $ICONS_ARCHIVE"
+    exit 1
+fi
+tar -xJf "$ICONS_ARCHIVE" -C "$ICONS_DIR/"
 echo "      -> $ICONS_DIR/Zafiro-Icons-Light"
 
 if command -v gtk-update-icon-cache &>/dev/null; then

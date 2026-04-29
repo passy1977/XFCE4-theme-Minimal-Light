@@ -14,5 +14,5 @@
   <property name="window-height" type="int" value="1402"/>
   <property name="window-x" type="int" value="2256"/>
   <property name="window-y" type="int" value="0"/>
-  <property name="exclude-paths" type="string" value="/dev/;/home/antoniosalsi/.cache/;/home/antoniosalsi/.gvfs/;/home/antoniosalsi/.local/share/Trash;/media/"/>
+  <property name="exclude-paths" type="string" value="/dev/;~/.cache/;~/.gvfs/;~/.local/share/Trash;/media/"/>
 </channel>

@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version='1.0' encoding='utf-8'?>
 <channel name="xfce4-panel" version="1.0">
   <property name="configver" type="int" value="2" />
   <property name="panels" type="array">
@@ -129,21 +129,7 @@
       <property name="favorites" type="array">
       </property>
       <property name="recent" type="array">
-        <value type="string" value="io.github.martinrotter.rssguard.desktop" />
-        <value type="string" value="org.remmina.Remmina.desktop" />
-        <value type="string" value="timeshift-gtk.desktop" />
-        <value type="string" value="com.valvesoftware.Steam.desktop" />
-        <value type="string" value="dev.desktop" />
-        <value type="string" value="app.desktop" />
-        <value type="string" value="org.xfce.mousepad.desktop" />
-        <value type="string" value="io.github.flattool.Warehouse.desktop" />
-        <value type="string" value="org.gimp.GIMP.desktop" />
-        <value type="string" value="ar.xjuan.Cambalache.desktop" />
-        <value type="string" value="dev-google-chrome.desktop" />
-        <value type="string" value="com.usebottles.bottles.desktop" />
-        <value type="string" value="org.gnome.Calculator.desktop" />
-        <value type="string" value="org.raspberrypi.rpi-imager.desktop" />
-      </property>
+        </property>
       <property name="launcher-show-tooltip" type="bool" value="true" />
       <property name="position-categories-horizontal" type="bool" value="false" />
       <property name="position-profile-alternate" type="bool" value="false" />
@@ -266,5 +252,5 @@
       <property name="known-players" type="string" value="Chrome;firefox;LibreWolf;librewolf;vlc" />
       <property name="volume-step" type="uint" value="3" />
     </property>
-  </property>
+    </property>
 </channel>

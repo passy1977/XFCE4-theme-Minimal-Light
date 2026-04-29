@@ -20,7 +20,7 @@ minimal-light/
 └── install.sh                         # Installation script
 ```
 
-> **Icon theme not included** — `Zafiro-Icons-Light` is downloaded automatically from [GitHub](https://github.com/zayronxio/Zafiro-icons/releases) during installation.
+> The `Zafiro-Icons-Light` icon theme is bundled in the `icons/` folder and installed locally during setup.
 
 ---
 
@@ -28,7 +28,6 @@ minimal-light/
 
 - XFCE 4.x desktop environment
 - Bash shell
-- `curl` or `wget` (to download the icon theme)
 - `tar` with xz support
 
 ---
@@ -54,6 +53,7 @@ minimal-light/
 |--------|---------|-------------|
 | `whiskermenu` | `xfce4-whiskermenu-plugin` | Application menu (main launcher) |
 | `pulseaudio` | `xfce4-pulseaudio-plugin` | Volume control |
+| `systray` | built-in | System tray (includes power manager, network, blueman) |
 | `notification-plugin` | `xfce4-notifyd` | Notification bell/history |
 | `clipman` | `xfce4-clipman-plugin` | Clipboard manager |
 | `launcher` | built-in | App shortcut launchers |
@@ -103,7 +103,7 @@ sudo bash install.sh --user <username>
 | Component | Destination |
 |-----------|-------------|
 | GTK theme `Minimal-Light` | `~/.local/share/themes/Minimal-Light` |
-| Icon theme `Zafiro-Icons-Light` | Downloaded from GitHub → `~/.local/share/icons/Zafiro-Icons-Light` |
+| Icon theme `Zafiro-Icons-Light` | Bundled in `icons/` → `~/.local/share/icons/Zafiro-Icons-Light` |
 | Wallpapers | `/usr/local/share/backgrounds/` (root) or `~/.local/share/backgrounds/` (user) |
 | XFCE config (panel, desktop, keyboard, etc.) | `~/.config/xfce4/xfconf/xfce-perchannel-xml/` |
 | Panel launcher shortcuts | `~/.config/xfce4/panel/launcher-*/` |
@@ -151,7 +151,6 @@ The following XFCE settings are included:
 | `xfce4-notifyd.xml` | Notification daemon settings |
 | `keyboards.xml` | Input device configuration |
 | `pointers.xml` | Mouse/touchpad settings |
-| `displays.xml` | Display configuration |
 
 ---
 
@@ -249,4 +248,4 @@ The following XFCE settings are included:
 ## Credits
 
 - **Zafiro Icons** by [zayronxio](https://github.com/zayronxio/Zafiro-icons/) — icon theme used in this setup, licensed under GPL-3.0.
-  Downloaded automatically from the [official releases](https://github.com/zayronxio/Zafiro-icons/releases).
+  Bundled as `icons/Zafiro-Icons-Light.tar.xz` (from [xfce-look.org](https://www.xfce-look.org/s/xfce/p/1209330/)).
