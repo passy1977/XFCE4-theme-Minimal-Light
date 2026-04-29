@@ -1,6 +1,8 @@
 # Minimal-Light — XFCE Theme Setup
 
-A clean, minimal XFCE desktop configuration based on the **Minimal-Light** GTK theme, **Zafiro-Icons-Light** icon pack, and a curated set of minimalist wallpapers.
+A clean, minimal XFCE desktop configuration based on the **Minimal-Light** GTK theme, **Zafiro-Icons-Light** icon pack (with some mod), and a some minimalist wallpapers.
+
+![Minimal-Light Desktop Preview](images/screenshot.png)
 
 ---
 
