@@ -194,7 +194,6 @@ The following XFCE settings are included:
 | `XF86PowerOff` | Session Logout (`xfce4-session-logout`) |
 | `XF86WWW` / `HomePage` | Open default Web Browser |
 | `XF86Mail` | Open default Mail Reader |
-| `Calculator` | Open Calculator |
 | `Search` | Open Catfish file search |
 | `Tools` / `AudioMedia` | Open Amazon Music (web) |
 
@@ -254,13 +253,7 @@ The following XFCE settings are included:
 | `Ctrl + F1` … `Ctrl + F12` | Switch to workspace 1–12 |
 | `Ctrl + Alt + KP_1` … `KP_9` | Move window to workspace 1–9 |
 
-### Move Window within Workspace
-
-| Shortcut | Action |
-|----------|--------|
-| `Ctrl + Shift + Alt + Left` | Move window left |
-| `Ctrl + Shift + Alt + Right` | Move window right |
-| `Ctrl + Shift + Alt + Up` | Move window up |
+Shortcuts for moving a window left, right, or up within the current workspace are intentionally left unbound in the shipped profile.
 
 ---
 
