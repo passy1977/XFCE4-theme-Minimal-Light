@@ -89,6 +89,9 @@ bash install.sh
 sudo bash install.sh --user <username>
 ```
 
+> **Note:** The target user must have logged in at least once before running this command,
+> so that their home directory and XFCE profile are properly initialized.
+
 ### Options
 
 | Flag | Description |

@@ -53,6 +53,13 @@ if [[ "$TARGET_USER" != "$USER" ]] && [[ "$EUID" -ne 0 ]]; then
     [[ "$confirm" =~ ^[yY]$ ]] || exit 1
 fi
 
+# Warn if installing for another user that they must have logged in at least once
+if [[ "$TARGET_USER" != "$USER" ]]; then
+    echo "Note: '$TARGET_USER' must have logged in at least once before running this script,"
+    echo "      so that their home directory and XFCE profile are properly initialized."
+    echo ""
+fi
+
 # -------------------------------------------------------
 # 1. Install GTK theme (Minimal-Light)
 # -------------------------------------------------------
@@ -142,9 +149,12 @@ if [[ "$TARGET_USER" != "$USER" ]] && [[ "$EUID" -eq 0 ]]; then
     chown -R "$TARGET_USER":"$TARGET_USER" \
         "$THEMES_DIR/Minimal-Light" \
         "$ICONS_DIR/Zafiro-Icons-Light" \
-        "$TARGET_HOME/.local/share/backgrounds" \
         "$XFCONF_DIR" \
         "$PANEL_DIR"
+    # Only chown backgrounds if installed to user-local path
+    if [[ "$BACKGROUNDS_DEST" != "/usr/local/share/backgrounds" ]]; then
+        chown -R "$TARGET_USER":"$TARGET_USER" "$BACKGROUNDS_DEST"
+    fi
 else
     echo "[5/5] File ownership: OK (same user)"
 fi
