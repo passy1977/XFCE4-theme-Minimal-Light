@@ -8,8 +8,8 @@
       <property name="position" type="string" value="p=10;x=1137;y=1478" />
       <property name="length" type="double" value="95.74468085106389" />
       <property name="position-locked" type="bool" value="true" />
-      <property name="icon-size" type="uint" value="40" />
-      <property name="size" type="uint" value="60" />
+      <property name="icon-size" type="uint" value="35" />
+      <property name="size" type="uint" value="45" />
       <property name="plugin-ids" type="array">
         <value type="int" value="16" />
         <value type="int" value="9" />
