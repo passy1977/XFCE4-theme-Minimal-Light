@@ -99,6 +99,8 @@ curl -fsSL https://raw.githubusercontent.com/passy1977/Xfce4-theme-Minimal-Light
 sudo bash install.sh --user <username>
 ```
 
+If you run `sudo bash install.sh` without `--user`, the installer targets the invoking user (`$SUDO_USER`) by default, not `root`.
+
 ### For a specific user (requires root, remote with curl)
 
 ```bash
@@ -133,11 +135,15 @@ curl -fsSL https://raw.githubusercontent.com/passy1977/Xfce4-theme-Minimal-Light
 
 > **Wallpaper paths**: the script automatically rewrites the wallpaper paths in `xfce4-desktop.xml` to match the actual install destination, whether backgrounds are installed system-wide or in the user's home.
 
+> **Panel/session reset**: the installer replaces `~/.config/xfce4/panel/` instead of merging it and archives any existing `~/.cache/sessions/xfce4-session-*` files to avoid old panels or stale session state being restored on the next login.
+
 ---
 
 ## Applying the theme
 
-After installation, log out and log back into your Xfce session to apply all settings.
+When the script is run by the currently logged-in Xfce user inside an active session, it also tries to reload the panel, wallpaper, and theme settings immediately.
+
+If you install for another user, over SSH, or outside a live Xfce session, log out and log back in to apply all settings.
 
 If some settings are not applied automatically:
 - **Settings → Appearance** → select `Minimal-Light`

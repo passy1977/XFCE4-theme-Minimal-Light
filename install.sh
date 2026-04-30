@@ -7,7 +7,8 @@
 
 set -euo pipefail
 
-TARGET_USER="$USER"
+TARGET_USER="${SUDO_USER:-$USER}"
+INVOKING_USER="${SUDO_USER:-$USER}"
 TARGET_HOME=""
 SCRIPT_DIR=""
 REMOTE_MODE=0
@@ -15,11 +16,58 @@ REMOTE_ARCHIVE_URL="${MINIMAL_LIGHT_REMOTE_ARCHIVE_URL:-https://github.com/passy
 TEMP_DIR=""
 DEFAULT_BACKGROUNDS_DIR="/usr/local/share/backgrounds"
 
+timestamp() {
+    date +%Y%m%d%H%M%S
+}
+
+backup_path() {
+    local source_path="$1"
+
+    if [[ -e "$source_path" ]]; then
+        local backup_dest="${source_path}.bak.$(timestamp)"
+        mv "$source_path" "$backup_dest"
+        echo "      Backup: $backup_dest"
+    fi
+}
+
+reload_current_xfce_session() {
+    if [[ "$TARGET_USER" != "$INVOKING_USER" ]]; then
+        return
+    fi
+
+    if [[ -z "${DISPLAY:-}" || -z "${DBUS_SESSION_BUS_ADDRESS:-}" ]]; then
+        return
+    fi
+
+    if ! command -v xfconf-query &>/dev/null; then
+        return
+    fi
+
+    echo "[5/5] Reloading active XFCE session..."
+
+    xfconf-query -c xsettings -p /Net/ThemeName -n -t string -s "Minimal-Light" 2>/dev/null || \
+        xfconf-query -c xsettings -p /Net/ThemeName -t string -s "Minimal-Light" 2>/dev/null || true
+    xfconf-query -c xsettings -p /Net/IconThemeName -n -t string -s "Zafiro-Icons-Light" 2>/dev/null || \
+        xfconf-query -c xsettings -p /Net/IconThemeName -t string -s "Zafiro-Icons-Light" 2>/dev/null || true
+    xfconf-query -c xfwm4 -p /general/theme -n -t string -s "Minimal-Light" 2>/dev/null || \
+        xfconf-query -c xfwm4 -p /general/theme -t string -s "Minimal-Light" 2>/dev/null || true
+
+    if command -v xfce4-panel &>/dev/null; then
+        xfce4-panel -r >/dev/null 2>&1 || true
+    fi
+
+    if command -v xfdesktop &>/dev/null; then
+        xfdesktop --reload >/dev/null 2>&1 || true
+    fi
+
+    echo "      -> Active XFCE session reloaded"
+}
+
 usage() {
     echo "Usage: bash install.sh [--remote] [--user <username>]"
     echo ""
     echo "  --remote            Download the repository archive before installing"
-    echo "  --user <username>   Install for a specific user (default: current user)"
+    echo "  --user <username>   Install for a specific user (default: invoking user, even under sudo)"
     echo "  --help              Show this help message"
 }
 
@@ -198,6 +246,8 @@ done
 # Install panel launcher .desktop files
 PANEL_DIR="$TARGET_HOME/.config/xfce4/panel"
 if [[ -d "$SCRIPT_DIR/config/xfce4/panel" ]]; then
+    backup_path "$PANEL_DIR"
+    mkdir -p "$PANEL_DIR"
     for launcher_dir in "$SCRIPT_DIR/config/xfce4/panel/launcher-"*/; do
         launcher_name=$(basename "$launcher_dir")
         dest_launcher="$PANEL_DIR/$launcher_name"
@@ -227,6 +277,21 @@ if [[ -d "$THUNAR_CONFIG_SRC" ]]; then
     shopt -u nullglob
 fi
 
+SESSIONS_CACHE_DIR="$TARGET_HOME/.cache/sessions"
+if [[ -d "$SESSIONS_CACHE_DIR" ]]; then
+    shopt -s nullglob
+    session_files=("$SESSIONS_CACHE_DIR"/xfce4-session-*)
+    if (( ${#session_files[@]} > 0 )); then
+        STALE_SESSIONS_DIR="$SESSIONS_CACHE_DIR/minimal-light-stale-session-$(timestamp)"
+        mkdir -p "$STALE_SESSIONS_DIR"
+        for session_file in "${session_files[@]}"; do
+            mv "$session_file" "$STALE_SESSIONS_DIR/"
+        done
+        echo "      Archived stale XFCE session cache -> $STALE_SESSIONS_DIR"
+    fi
+    shopt -u nullglob
+fi
+
 # -------------------------------------------------------
 # 5. Fix file ownership when installing for another user
 # -------------------------------------------------------
@@ -243,6 +308,9 @@ if [[ "$TARGET_USER" != "$USER" ]] && [[ "$EUID" -eq 0 ]]; then
     if [[ -d "$THUNAR_CONFIG_DIR" ]]; then
         OWNERSHIP_TARGETS+=("$THUNAR_CONFIG_DIR")
     fi
+    if [[ -n "${STALE_SESSIONS_DIR:-}" && -d "$STALE_SESSIONS_DIR" ]]; then
+        OWNERSHIP_TARGETS+=("$STALE_SESSIONS_DIR")
+    fi
     chown -R "$TARGET_USER":"$TARGET_USER" "${OWNERSHIP_TARGETS[@]}"
     # Only chown backgrounds if installed to user-local path
     if [[ "$BACKGROUNDS_DEST" != "$DEFAULT_BACKGROUNDS_DIR" ]]; then
@@ -252,10 +320,13 @@ else
     echo "[5/5] File ownership: OK (same user)"
 fi
 
+reload_current_xfce_session
+
 echo ""
 echo "==> Installation complete!"
 echo ""
-echo "    To apply the theme, log out and log back into your XFCE session."
+echo "    Existing panel state was replaced and stale XFCE session cache was archived when present."
+echo "    If you installed this for another user or outside an active XFCE session, log out and log back in."
 echo ""
 echo "    If some settings are not applied automatically:"
 echo "       - Go to Settings > Appearance and select 'Minimal-Light'"
