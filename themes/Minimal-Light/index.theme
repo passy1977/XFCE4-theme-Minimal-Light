@@ -8,5 +8,4 @@ Encoding=UTF-8
 GtkTheme=Minimal-Light
 MetacityTheme=Minimal-Light
 IconTheme=Zafiro-icons-Light
-CursorTheme=DeepinDark-cursors
 ButtonLayout=menu:minimize,maximize,close
