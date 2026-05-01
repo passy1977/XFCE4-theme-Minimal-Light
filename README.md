@@ -284,5 +284,6 @@ Shortcuts for moving a window left, right, or up within the current workspace ar
 
 - **Zafiro Icons** by [zayronxio](https://github.com/zayronxio/Zafiro-icons/) — icon theme used in this setup, licensed under GPL-3.0.
   Bundled as `icons/Zafiro-Icons-Light.tar.xz` (from [xfce-look.org](https://www.xfce-look.org/s/xfce/p/1209330/)).
-- Based on **arc-theme** by [horst3180](https://github.com/horst3180/arc-theme)  
+- Inspired by **arc-theme** by [horst3180](https://github.com/horst3180/arc-theme)  
+- Inspired by **eos-settings-xfce4** by [endeavouros-team](https://github.com/endeavouros-team/eos-settings-xfce4) 
 - Background images were downloaded from various sources on the internet.
