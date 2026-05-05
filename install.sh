@@ -74,6 +74,15 @@ reload_current_xfce_session() {
     xfconf-query -c xfwm4 -p /general/theme -n -t string -s "Minimal-Light" 2>/dev/null || \
         xfconf-query -c xfwm4 -p /general/theme -t string -s "Minimal-Light" 2>/dev/null || true
 
+    # Wait for xfconfd to be fully up before reloading xfdesktop.
+    # The xfconf-query calls above trigger its restart; without this wait
+    # xfdesktop --reload reads stale/empty wallpaper values from xfconfd.
+    local i
+    for i in {1..20}; do
+        pgrep -u "$USER" xfconfd &>/dev/null && break
+        sleep 0.2
+    done
+
     if command -v xfce4-panel &>/dev/null; then
         xfce4-panel -r >/dev/null 2>&1 || true
     fi
