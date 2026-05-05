@@ -30,6 +30,28 @@ backup_path() {
     fi
 }
 
+stop_xfconfd() {
+    if [[ "$TARGET_USER" != "$INVOKING_USER" ]]; then
+        return
+    fi
+
+    if [[ -z "${DISPLAY:-}" || -z "${DBUS_SESSION_BUS_ADDRESS:-}" ]]; then
+        return
+    fi
+
+    local xfconfd_pid
+    xfconfd_pid=$(pgrep -u "$USER" xfconfd 2>/dev/null || true)
+    if [[ -n "$xfconfd_pid" ]]; then
+        echo "      Stopping xfconfd (PID $xfconfd_pid) before writing config files..."
+        kill "$xfconfd_pid" 2>/dev/null || true
+        local i
+        for i in {1..10}; do
+            kill -0 "$xfconfd_pid" 2>/dev/null || break
+            sleep 0.2
+        done
+    fi
+}
+
 reload_current_xfce_session() {
     if [[ "$TARGET_USER" != "$INVOKING_USER" ]]; then
         return
@@ -223,6 +245,9 @@ fi
 # -------------------------------------------------------
 # 4. Install XFCE and Thunar configuration
 # -------------------------------------------------------
+# Stop xfconfd before writing config files so the running daemon's in-memory
+# state cannot overwrite newly installed XML files when the session exits.
+stop_xfconfd
 echo "[4/5] Installing XFCE and Thunar configuration..."
 XFCONF_DIR="$TARGET_HOME/.config/xfce4/xfconf/xfce-perchannel-xml"
 mkdir -p "$XFCONF_DIR"
